@@ -121,6 +121,7 @@ ul{
   background-color: #f1d1cb;
   border: 2px solid rgb(255, 66, 66);
   border-radius: 16px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
 
   display: flex;
   justify-content: center;
