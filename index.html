@@ -35,6 +35,7 @@
 
         <input
           v-model="newTask"
+          @keyup.enter="addTask"
           type="text"
           placeholder="New Task">
 
