@@ -24,6 +24,7 @@ data() {
   }
 },
 methods: {
+  // ADD TASK
   addTask(){
     this.newTask = this.newTask.trim()
       if(this.newTask.length >= 5){
@@ -35,6 +36,15 @@ methods: {
       }
       console.log(this.taskArray);
   },
+  // REMOVE TASK
+  removeTask(i){
+    if(this.taskArray[i].done === true){
+      this.taskArray.splice(i, 1);
+      this.isErrorDelete= false;
+    }else{
+      this.isErrorDelete= true;
+    }
+  }
 },
 mounted() {
   console.log("Montato");
