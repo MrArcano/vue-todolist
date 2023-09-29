@@ -52,14 +52,12 @@
       <!-- TASKLIST -->
       <div class="task-container">
         <ul v-if="taskArray.length > 0">
-          <li v-for="(task , index) in taskArray">
+          <li @click="task.done = !task.done" v-for="(task , index) in taskArray">
 
-            <span
-              :class="{'line-through':task.done}"
-              @click="task.done = !task.done">{{task.todo}}</span>
+            <span :class="{'line-through':task.done}">{{task.todo}}</span>
 
             <i
-              @click="removeTask(index)"
+              @click.stop="removeTask(index)"
               class="fa-solid fa-trash-can"></i>
 
           </li>

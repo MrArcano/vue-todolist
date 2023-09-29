@@ -85,15 +85,14 @@ ul{
   align-items: center;
   font-family: 'Dancing Script', cursive;
   font-size: 2rem;
+
+  cursor: pointer;
+
+  transition: 0.3s;
 }
 
 .task-container li:hover{
   background-color: #eeeeee;
-}
-
-.task-container li span,
-.task-container li i{
-  cursor: pointer;
 }
 
 .task-container li span.line-through{
