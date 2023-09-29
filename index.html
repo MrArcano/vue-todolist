@@ -38,26 +38,22 @@
           type="text"
           placeholder="New Task">
 
-
         <button
           @click="addTask"
           type="button">Add
           <i
           class="fa-solid fa-plus"></i></button>
 
-        <!-- <p class="error" v-if="isError">- Il task deve essere minimo 5 caratteri -</p>
-        <p class="error" v-if="isErrorDelete">- Per cancellare un task deve essere finito! -</p> -->
         <div class="error" v-if="isError">
-          <p>
-            <i class="fa-solid fa-triangle-exclamation"></i> 
-            <span>Il task deve essere minimo 5 caratteri</span>
-            <i @click="isError=false" class="fa-solid fa-xmark"></i></p>
+          <i class="fa-solid fa-triangle-exclamation"></i> 
+          <span>Il task deve essere minimo 5 caratteri</span>
+          <i @click="isError=false" class="fa-solid fa-xmark"></i>
         </div>
+
         <div class="error" v-if="isErrorDelete">
-          <p>
-            <i class="fa-solid fa-triangle-exclamation"></i> 
-            <span>Per cancellare un task deve essere finito!</span>
-            <i @click="isErrorDelete=false" class="fa-solid fa-xmark"></i></p>
+          <i class="fa-solid fa-triangle-exclamation"></i> 
+          <span>Per cancellare un task deve essere finito!</span>
+          <i @click="isErrorDelete=false" class="fa-solid fa-xmark"></i>
         </div>
 
       </div>
