@@ -32,30 +32,29 @@
     <div class="container">
       <!-- NEW TASK -->
       <div class="new-task">
-        <input type="text" placeholder="New Task">
-        <button type="button">Add <i class="fa-solid fa-plus"></i></button>
+
+        <input
+          v-model="newTask"
+          type="text"
+          placeholder="New Task">
+
+          
+        <button
+          @click="addTask"
+          type="button">Add
+          <i
+          class="fa-solid fa-plus"></i></button>
       </div>
 
       <!-- TASKLIST -->
       <div class="task-container">
-        <ul>
-          <li>
-            <span>New Task</span>
-            <i class="fa-solid fa-trash-can"></i>
-          </li>
-          <li>
-            <span class="line-through">New Task</span>
-            <i class="fa-solid fa-trash-can"></i>
-          </li>
-          <li>
-            <span>New Task</span>
-            <i class="fa-solid fa-trash-can"></i>
-          </li>
-          <li>
-            <span>New Task</span>
+        <ul v-if="taskArray.length > 0">
+          <li v-for="(task , index) in taskArray">
+            <span>{{task.todo}}</span>
             <i class="fa-solid fa-trash-can"></i>
           </li>
         </ul>
+        <h5 v-else>- Non ci sono Task! -</h5>
       </div>
 
     </div>

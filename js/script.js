@@ -3,11 +3,38 @@ const {createApp} = Vue;
 createApp({
 data() {
   return {
+    taskArray: [
+      {
+        todo: "Spesa",
+        done: false,
+      },
+      {
+        todo: "Ripassare Vue",
+        done: false,
+      },
+      {
+        todo: "Cucinare Arrosto",
+        done: false,
+      },
+    ],
+    newTask: "",
+    isError: false,
+    isErrorDelete: false,
     
   }
 },
 methods: {
-  
+  addTask(){
+    this.newTask = this.newTask.trim()
+      if(this.newTask.length >= 5){
+        this.taskArray.unshift({todo: this.newTask, done: false});
+        this.newTask = "";
+        this.isError = false;
+      }else{
+        this.isError = true;
+      }
+      console.log(this.taskArray);
+  },
 },
 mounted() {
   console.log("Montato");
