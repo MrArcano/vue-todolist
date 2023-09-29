@@ -1,0 +1,105 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul{
+  list-style: none;
+}
+
+/* font-family: 'Dancing Script', cursive;
+*/
+
+.logo{
+  background-color: #2b2b2b;
+  color: white;
+
+  font-size: 8rem;
+  font-weight: bold;
+
+  text-align: center;
+  font-family: 'Lato', sans-serif; 
+}
+
+.container{
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+
+  width: 70%;
+  max-width: 1000px;
+
+  margin: 32px auto;
+  padding: 32px;
+  background-color: #d4d4d4;
+  border: 1px solid #2b2b2b;
+  border-radius: 16px;
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* NEW TASK */
+/* ------------------------------------------------ */
+.new-task{
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.new-task input,
+.new-task button{
+  font-size: 1.5rem;
+  font-family: 'Lato', sans-serif;
+  padding: 8px 16px;
+  border: 1px solid #2b2b2b;
+  color: #2b2b2b;
+}
+
+.new-task input{
+  border-top-left-radius: 32px;
+  border-bottom-left-radius: 32px;
+  border-right: none;
+}
+
+.new-task button{
+  border-top-right-radius: 32px;
+  border-bottom-right-radius: 32px;
+  cursor: pointer;
+
+  background-color: white;
+  color: #2b2b2b;
+}
+
+.new-task button:hover{
+  background-color: #2b2b2b;
+  color: white;
+}
+/* ------------------------------------------------ */
+
+
+/* TASK LIST */
+/* ------------------------------------------------ */
+.task-container li{
+  border-bottom: 1px solid #2b2b2b;
+  padding: 8px 32px ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-container li:hover{
+  background-color: #eeeeee;
+}
+
+.task-container li span,
+.task-container li i{
+  cursor: pointer;
+}
+
+.task-container li span.line-through{
+  text-decoration: line-through;
+}
+
+.task-container li i:hover{
+  color: red;
+}
+/* ------------------------------------------------ */
+
