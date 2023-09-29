@@ -38,12 +38,15 @@
           type="text"
           placeholder="New Task">
 
-          
+
         <button
           @click="addTask"
           type="button">Add
           <i
           class="fa-solid fa-plus"></i></button>
+
+        <p class="error" v-if="isError">- Il task deve essere minimo 5 caratteri -</p>
+        <p class="error" v-if="isErrorDelete">- Per cancellare un task deve essere finito! -</p>
       </div>
 
       <!-- TASKLIST -->

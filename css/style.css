@@ -24,7 +24,7 @@ ul{
 
 .container{
   
-  font-size: 2rem;
+  
 
   width: 70%;
   max-width: 1000px;
@@ -84,6 +84,7 @@ ul{
   justify-content: space-between;
   align-items: center;
   font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
 }
 
 .task-container li:hover{
@@ -108,3 +109,8 @@ ul{
 }
 /* ------------------------------------------------ */
 
+.error{
+  margin-top: 8px;
+  color: red;
+  font-weight: bold;
+}
