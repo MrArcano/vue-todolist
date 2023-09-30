@@ -46,19 +46,21 @@
           class="fa-solid fa-plus"></i></button>
 
           <div class="error-container">
-            <transition>
+            <transition name="bounce">
               <div class="error" v-if="isError">
                 <i class="fa-solid fa-triangle-exclamation"></i> 
                 <span>Il task deve essere minimo 5 caratteri</span>
                 <i @click="isError=false" class="fa-solid fa-xmark"></i>
+                <div class="bar"></div>
               </div>
             </transition>
             
-            <transition>
+            <transition name="bounce">
               <div class="error" v-if="isErrorDelete">
                 <i class="fa-solid fa-triangle-exclamation"></i> 
                 <span>Per cancellare un task deve essere finito!</span>
                 <i @click="isErrorDelete=false" class="fa-solid fa-xmark"></i>
+                <div class="bar"></div>
               </div>
             </transition>
   

@@ -5,16 +5,16 @@ data() {
   return {
     taskArray: [
       {
-        todo: "Spesa",
+        todo: "Transition vue",
+        done: true,
+      },
+      {
+        todo: "Timer error message",
         done: false,
       },
       {
-        todo: "Ripassare Vue",
-        done: false,
-      },
-      {
-        todo: "Cucinare Arrosto",
-        done: false,
+        todo: "Animation timer",
+        done: true,
       },
     ],
     newTask: "",
@@ -27,14 +27,14 @@ methods: {
   // ADD TASK
   addTask(){
     // this.newTask = this.newTask.trim()
-      if(this.newTask.length >= 5){
-        this.taskArray.unshift({todo: this.newTask, done: false});
-        this.newTask = "";
-        this.isError = false;
-      }else{
-        this.isError = true;
-      }
-      console.log(this.taskArray);
+    if(this.newTask.length >= 5){
+      this.taskArray.unshift({todo: this.newTask, done: false});
+      this.newTask = "";
+      this.isError = false;
+    }else{
+      this.isError = true;
+    }
+    console.log(this.taskArray);
   },
   // REMOVE TASK
   removeTask(i){

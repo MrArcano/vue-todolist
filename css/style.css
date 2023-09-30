@@ -131,9 +131,9 @@ ul{
   border-radius: 16px;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+
+  overflow: hidden;
 }
 
 .error .fa-triangle-exclamation{
@@ -162,11 +162,33 @@ ul{
   background-color: white;
 }
 
+.error .bar{
+  background-color: #2b2b2b;
+  height: 4px;
+  width: 100%;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  animation: bar-out 5s;
+  transform: translateX(-100%);
+}
+
+@keyframes bar-out {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 /* TRANSITION VUE */
-.v-enter-active {
+.bounce-enter-active {
   animation: bounce-in 0.5s;
 }
-.v-leave-active {
+.bounce-leave-active {
   animation: bounce-in 0.5s reverse;
 }
 @keyframes bounce-in {
