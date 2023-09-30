@@ -26,7 +26,7 @@ data() {
 methods: {
   // ADD TASK
   addTask(){
-    this.newTask = this.newTask.trim()
+    // this.newTask = this.newTask.trim()
       if(this.newTask.length >= 5){
         this.taskArray.unshift({todo: this.newTask, done: false});
         this.newTask = "";

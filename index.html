@@ -13,7 +13,7 @@
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Lato&display=swap" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
@@ -34,7 +34,7 @@
       <div class="new-task">
 
         <input
-          v-model="newTask"
+          v-model.trim="newTask"
           @keyup.enter="addTask"
           type="text"
           placeholder="New Task">
@@ -45,17 +45,24 @@
           <i
           class="fa-solid fa-plus"></i></button>
 
-        <div class="error" v-if="isError">
-          <i class="fa-solid fa-triangle-exclamation"></i> 
-          <span>Il task deve essere minimo 5 caratteri</span>
-          <i @click="isError=false" class="fa-solid fa-xmark"></i>
-        </div>
-
-        <div class="error" v-if="isErrorDelete">
-          <i class="fa-solid fa-triangle-exclamation"></i> 
-          <span>Per cancellare un task deve essere finito!</span>
-          <i @click="isErrorDelete=false" class="fa-solid fa-xmark"></i>
-        </div>
+          <div class="error-container">
+            <transition>
+              <div class="error" v-if="isError">
+                <i class="fa-solid fa-triangle-exclamation"></i> 
+                <span>Il task deve essere minimo 5 caratteri</span>
+                <i @click="isError=false" class="fa-solid fa-xmark"></i>
+              </div>
+            </transition>
+            
+            <transition>
+              <div class="error" v-if="isErrorDelete">
+                <i class="fa-solid fa-triangle-exclamation"></i> 
+                <span>Per cancellare un task deve essere finito!</span>
+                <i @click="isErrorDelete=false" class="fa-solid fa-xmark"></i>
+              </div>
+            </transition>
+  
+          </div>
 
       </div>
 
@@ -71,7 +78,10 @@
 
           </li>
         </ul>
-        <h3 v-else>- Non ci sono Task! -</h3>
+        <div v-else class="dont-task">
+          <img src="img/pcX.png" alt="pcX">
+          <h1>- Non ci sono Task! -</h1>
+        </div>
       </div>
 
     </div>

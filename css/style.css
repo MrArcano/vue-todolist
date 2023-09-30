@@ -83,7 +83,7 @@ ul{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Caveat', cursive;
   font-size: 2rem;
 
   cursor: pointer;
@@ -99,24 +99,32 @@ ul{
   text-decoration: line-through;
 }
 
+.task-container li i{
+  transition: 0.3s;
+}
+
 .task-container li i:hover{
   color: red;
+}
+
+.dont-task{
+  text-align: center;
 }
 
 .task-container h3{
   text-align: center;
 }
 /* ------------------------------------------------ */
-.hide{
-  opacity: 0;
-}
-
-.error{
-  opacity: 1;
+.error-container{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+}
+
+
+.error{
+  margin: 8px 0;
   padding: 16px;
   background-color: #f1d1cb;
   border: 2px solid rgb(255, 66, 66);
@@ -152,4 +160,23 @@ ul{
 
 .error .fa-xmark:hover{
   background-color: white;
+}
+
+/* TRANSITION VUE */
+.v-enter-active {
+  animation: bounce-in 0.5s;
+}
+.v-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
